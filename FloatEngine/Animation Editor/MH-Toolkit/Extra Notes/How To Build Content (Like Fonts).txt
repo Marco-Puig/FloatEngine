@@ -1,0 +1,29 @@
+The MonoGame Content Pipeline is used to create .xnb files for our engine. The Content Manager can automatically compress
+audio and textures, as well as convert them to proper formats for non-desktop platforms such as iOS or Xbox. The advantage
+of using .xnb on PC is that your assets can be significantly smaller in size. Also, if you don't like the idea of giving
+people raw .png files, using .xnb helps hide your assets from thieves!
+
+On PC, you can choose to use raw files for your assets (like .png or .wav) or convert them to .xnb. However, fonts MUST be
+created with the MonoGame Pipeline. Here's how to do it.
+
+================================
+How To Build Fonts
+================================
+1. Open the MonoGame Pipeline. If you don't have it you can get it by downloading the latest version of MonoGame at
+http://www.monogame.net/downloads/
+
+2. Go to File -> New and pick a place to save the file for this Content project.
+
+3. Right click the only item in the top left window pane (it will be called whatever you named your Content project file)
+and click Add -> New Item -> SpriteFont Description. This will generate a new .spritefont file.
+
+4. Open the new .spritefont file inside a text editor, or inside of Visual Studio. You can now edit this file to your 
+liking... you can change the name of the font you want to use, the size etc. inside this file. The font you want to 
+generate for your game MUST be installed on your computer, and the name you type here must be exactly like it's named on
+your machine. You can see the fonts installed on your computer by going to C:\Windows\Fonts
+
+5. When you're done with all of your edits, return to the MonoGame Pipeline and click Build -> Build from the top menu. An
+.xnb file will generate inside the bin folder next to the Content file you saved earlier. 
+
+6. Inside your Visual Studio project you can now add the generated .xnb file. After adding it to your Content folder make
+sure you set the "Copy to Output" option in the Properties window to "Copy if newer".

@@ -1,0 +1,56 @@
+﻿https://github.com/FNA-XNA/FNA/wiki/Appendix-B:-FNA-on-Consoles
+
+Xbox:
+On Program.cs:
+
+    [STAThread]
+    static void Main(string[] args)
+#if WINDOWS_UWP
+    {
+        realArgs = args;
+        SDL2.SDL.SDL_SetHint("SDL_WINRT_HANDLE_BACK_BUTTON", "1");
+        SDL2.SDL.SDL_main_func mainFunction = FakeMain;
+        SDL2.SDL.SDL_WinRTRunApp(mainFunction, IntPtr.Zero);
+    }
+
+    static string[] realArgs;
+    static int FakeMain(int argc, IntPtr argv)
+    {
+        RealMain(realArgs);
+        return 0;
+    }
+
+    static void RealMain(string[] args)
+#endif
+    {
+        // blah blah blah
+    }
+
+
+In Developer Command Prompt:
+
+# Assuming your put your SDL2 source folder in lib/...
+cd FNA\lib\SDL2\src\main\winrt
+rc SDL2-WinRTResources.rc
+
+From there, copy SDL2-WinRTResources.res into your main project folder and add this by hand to the first <PropertyGroup> block in your main csproj (yes, they seriously expect you to do this):
+<Win32Resource>SDL2-WinRTResources.res</Win32Resource>
+
+Switch:
+Window Size Changes:
+
+void ApplyVideoSettings(int width, int height, bool fullscreen, bool vsync);
+{
+    // Update GraphicsDeviceManager...
+    graphics.PreferredBackBufferWidth = width;
+    graphics.PreferredBackBufferHeight = height;
+    graphics.SynchronizeWithVerticalRetrace = vsync;
+    graphics.IsFullScreen = fullscreen;
+
+    // Apply!
+    graphics.ApplyChanges();
+
+    // A bunch of engine stuff
+    menu.ResizeScreen();
+    renderer.RecreateRenderTargets();
+}

@@ -1,0 +1,15 @@
+﻿FloatEngine Created By:
+Marco Puig (KazMaz)
+
+Programming Help:
+Ethan Lee
+Michael Hicks
+Daniel Schroeder (deadlydog)
+Oyyou
+
+3D/Math Code:
+Charles Humphrey
+
+Content Pipelines:
+FNA3D (Desktop)
+MONOGame (Mobile, Consoles)

@@ -1,0 +1,6 @@
+        protected float TendToZero(float val, float amount)
+        {
+            if (val > 0f && (val -= amount) < 0f) return 0f;
+            if (val < 0f && (val += amount) > 0f) return 0f;
+            return val;
+        }

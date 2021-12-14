@@ -1,0 +1,22 @@
+MonoGame and FNA are both open source recreations of the XNA 4.0 framework. In our coding series we'll be using FNA to make our games.
+
+I recommend using FNA when developing for desktop platforms (PC, Mac, Linux) and using MonoGame when developing for other consoles
+and handhelds (Xbox One, PlayStation 4, Android, iOS, Nintendo Switch etc.). The code you write in FNA and MonoGame transfer over
+easily and usually require zero code changes. The only thing that changes is the code under the hood of each framework; so it's
+nothing you should worry about.
+
+Becuase both projects are a recreation of XNA 4, you can google XNA 4 tutorials and re use the code you find in MonoGame or FNA.
+
+While it's true we're using FNA in our video series, I would also recommend installing the latest version of MonoGame. MonoGame
+comes with a "Content Pipeline" tool that converts your assets (textures, audio, fonts etc.) into .XNB files that can be used for
+different platforms you target.
+
+As of writing this, FNA does not have a content pipeline tool... but it accepts any content built with the MonoGame Content Pipeline.
+
+For the sake of simplicity, I try to never use the content pipeline in my video series. FNA accepts raw .png files for images, so I
+take that route for our textures. However, some types of content (such as fonts) MUST use the Content Pipeline from MonoGame. So,
+if you're looking at using the code we write in the long term I would highly recommend using the MonoGame Content Pipeline for all
+content you use in your games. 
+
+Download MonoGame here: http://www.monogame.net/downloads/
+

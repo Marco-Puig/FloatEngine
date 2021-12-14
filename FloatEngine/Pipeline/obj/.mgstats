@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/repos/FloatEngine/FloatEngine/Pipeline/Models/3080-model.fbx","D:/repos/FloatEngine/FloatEngine/Pipeline/bin/Models/3080-model.xnb","ModelProcessor","ModelContent",3536668,11971015,1.888744
+"D:/repos/FloatEngine/FloatEngine/Pipeline/Models/character.fbx","D:/repos/FloatEngine/FloatEngine/Pipeline/bin/Models/character.xnb","ModelProcessor","ModelContent",2608380,1334171,1.5544626
+"D:/repos/FloatEngine/FloatEngine/Pipeline/Models/palette.png","D:/repos/FloatEngine/FloatEngine/Pipeline/bin/Models/palette_0.xnb","TextureProcessor","Texture2DContent",330,153,0.0681813
+"D:/repos/FloatEngine/FloatEngine/Pipeline/Models/trees_pine.fbx","D:/repos/FloatEngine/FloatEngine/Pipeline/bin/Models/trees_pine.xnb","ModelProcessor","ModelContent",22428,11921,0.0898731

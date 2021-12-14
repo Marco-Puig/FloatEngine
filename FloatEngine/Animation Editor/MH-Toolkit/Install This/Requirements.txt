@@ -1,0 +1,6 @@
+1. Microsoft Visual Studio (the free Community version is here: https://www.visualstudio.com/vs/visual-studio-express/)
+2. FNA: http://fna-xna.github.io/
+3. FNA's Native Libraries: http://fna.flibitijibibo.com/archive/fnalibs.tar.bz2
+4. 7Zip: http://www.7-zip.org/download.html
+5. MonoGame: http://www.monogame.net/downloads/
+6. XNA 4.0 Redistributable (run the .exe I included in this folder)

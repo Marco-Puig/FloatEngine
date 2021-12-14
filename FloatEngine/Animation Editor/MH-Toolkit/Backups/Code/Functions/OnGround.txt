@@ -1,0 +1,6 @@
+        protected Rectangle OnGround(Map map)
+        {
+            Rectangle futureBoundingBox = new Rectangle((int)(position.X + boundingBoxOffset.X), (int)(position.Y + boundingBoxOffset.Y + (velocity.Y + gravity)), boundingBoxWidth, boundingBoxHeight); 
+
+            return map.CheckCollision(futureBoundingBox);
+        }

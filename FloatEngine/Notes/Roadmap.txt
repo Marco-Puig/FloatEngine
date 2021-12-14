@@ -1,0 +1,19 @@
+﻿Vague Goals:
+2.5 engine
+A 2D engine that supports 3D assets
+
+Editor selected objects xy arrows (line 467 - editor.cs)
+
+If Monogame:
+3D - no editor, figure out a suplement for sdl2
+Supports FBX files natively
+Learn SolidWorks(w/fbx plugin) or Blender
+If FNA:
+2D - editor
+
+Test monogame first to see if trade off is worth it.
+
+Expand Particle System
+
+Pause function:
+Camera zoom towards player with a simple ui popup.
