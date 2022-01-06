@@ -170,17 +170,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animation\AnimatedObject.cs" />
-    <Compile Include="Animation\Animation.cs" />
-    <Compile Include="Animation\AnimationLoader.cs" />
+    <Compile Include="Scripts\Animation\AnimatedObject.cs" />
+    <Compile Include="Scripts\Animation\Animation.cs" />
+    <Compile Include="Scripts\Animation\AnimationLoader.cs" />
     <Compile Include="Editor\Editor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editor\Editor.designer.cs">
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Emitters\Emitter.cs" />
-    <Compile Include="Emitters\SnowEmitter.cs" />
+    <Compile Include="Scripts\Emitters\Emitter.cs" />
+    <Compile Include="Scripts\Emitters\SnowEmitter.cs" />
     <Compile Include="Game\ExampleModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
