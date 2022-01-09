@@ -2,6 +2,6 @@
 is such a bad idea, and that 'to make your own in just a few days', until that day comes where
 I become a programming GOAT, this engine will be using the MGCB pipeline.
 
-Note: Please only using this pipeline for loading 3D Models (.fbx,.blend,.obj, and etc).
+Note: Please understand that using this pipeline is only for loading 3D Models (.fbx,.blend,.obj, and etc).
 There is already a pipeline in place for textures, images, sprites, and anything else involving
 SpriteBatch (2D Rendering).

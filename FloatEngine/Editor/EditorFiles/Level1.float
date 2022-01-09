@@ -130,7 +130,7 @@
     <Decor>
       <position>
         <X>0</X>
-        <Y>0</Y>
+        <Y>-300</Y>
       </position>
       <drawColor>
         <B>255</B>
@@ -159,8 +159,8 @@
       <sourceRect>
         <X>0</X>
         <Y>0</Y>
-        <Width>1280</Width>
-        <Height>720</Height>
+        <Width>1920</Width>
+        <Height>1080</Height>
         <Location>
           <X>0</X>
           <Y>0</Y>
@@ -168,6 +168,6 @@
       </sourceRect>
     </Decor>
   </decor>
-  <mapWidth>15</mapWidth>
+  <mapWidth>18</mapWidth>
   <mapHeight>9</mapHeight>
 </LevelData>

@@ -57,6 +57,7 @@ namespace FloatEngine
             //Set graphics
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+         
 
             //Set resolution
             Resolution.Init(ref graphics);
