@@ -1,0 +1,8 @@
+﻿Put this as your enviornment variable: /gldevice:%s
+with %s being the api you want to use
+
+Examples being:
+/gldevice:D3D11
+/gldevice:OpenGL
+/gldevice:Metal
+/gldevice:Vulkan

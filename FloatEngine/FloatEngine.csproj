@@ -60,6 +60,7 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Notes\Switching Render.txt" />
     <Content Include="Pipeline\Packages\CppNet.dll" />
     <Content Include="Pipeline\Packages\libmojoshader_64.dll" />
     <Content Include="Pipeline\Packages\mgfxc.dll" />
