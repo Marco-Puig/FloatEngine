@@ -10,14 +10,14 @@ using Microsoft.Xna.Framework.Media;
 
 namespace FloatEngine
 {
-    public class Snow : GameObject
+    public class RainObject : GameObject
     {
-        public Snow()
+        public RainObject()
         {
-            //use empty contructors since the xml file looks for one to save to.
+           
         }
 
-        public Snow(Vector2 inputPosition)
+        public RainObject(Vector2 inputPosition)
         {
             position = startPosition;
         }
@@ -26,7 +26,7 @@ namespace FloatEngine
         {
             base.Initialize();
             collidable = false;
-            Game.ParticleLoaded = 1;
+            Game.ParticleLoaded = 2;
         }
 
     }

@@ -13,11 +13,8 @@ namespace FloatEngine
     public class Game : Microsoft.Xna.Framework.Game
     {
         //Rendering managers
-        GraphicsDeviceManager graphics; //access to graphics/display device
+        public GraphicsDeviceManager graphics; //access to graphics/display device
         SpriteBatch spriteBatch; //renders graphics using sprite batch
-        Matrix view, projection; //render graphics via FNA3D graphics api
-        Matrix[] bonetransformations; //transform
-
 
         //Screen
         public static int ScreenHeight = 720;
@@ -37,16 +34,10 @@ namespace FloatEngine
         private State _nextState;
         public bool _contentLoaded;
 
-        //Particle System
-        public static Random Random;
-        private SnowEmitter _snowEmitter;
+        //Particle Manager
         public static int ParticleLoaded = 0;
-
-        //Levels
-        public int countLevel = 1;
-
-        //Models - (For Testing)
-        Model model;
+        SnowParticleGenerator snow;
+        RainParticleGenerator rain;
 
         public void ChangeState(State state)
         {
@@ -65,7 +56,6 @@ namespace FloatEngine
 
 #if DEBUG
             Resolution.SetResolution(1280, 720, false); //Main resolution - Debug.
-
 #else
             Resolution.SetResolution(1920, 1080, true); //Main resolution - Release.
 #endif
@@ -80,7 +70,6 @@ namespace FloatEngine
             editor = new EditorWindow(this);
             editor.Show();
 #endif
-            Random = new Random();
             base.Initialize(); //intialize non graphic variables
 
             Camera.Initialize();
@@ -96,13 +85,14 @@ namespace FloatEngine
             spriteBatch = new SpriteBatch(GraphicsDevice);
             _currentState = new MenuState(this, graphics.GraphicsDevice, Content);
             _contentLoaded = false;
-            _snowEmitter = new SnowEmitter(new Sprite(Content.Load<Texture2D>("Particles//Snow")));
 
-            //Load model:
-            model = Content.Load<Model>("Models//3080-model");
-            view = Matrix.CreateLookAt(new Vector3(80, 0, 0), Vector3.Zero, Vector3.Up);
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.GraphicsDevice.Viewport.AspectRatio, .1f, 1000f);
+            if (ParticleLoaded == 1)
+                spriteBatch = new SpriteBatch(GraphicsDevice);
+                snow = new SnowParticleGenerator(Content.Load<Texture2D>("Art//snow"), graphics.GraphicsDevice.Viewport.Width, 100);
 
+            if (ParticleLoaded == 2)
+                spriteBatch = new SpriteBatch(GraphicsDevice);
+                rain = new RainParticleGenerator(Content.Load<Texture2D>("Art//rain"), graphics.GraphicsDevice.Viewport.Width, 100);
 
 #if DEBUG //pre-processor directives.
             editor.LoadTextures(Content);
@@ -112,16 +102,11 @@ namespace FloatEngine
             splash.Load(Content);
             
             //selecting level...
-            if (countLevel == 1)
-                LoadLevel("Level1.float");
-            if (countLevel == 2)
-                LoadLevel("Level2.float");
+            LoadLevel("Level1.float");
         }
-        /// <summary>
-        /// Called each frame to update the game. Games usually runs 60 frames per second.
+        /// Called each frame to update the game. Games usually run 60 frames per second.
         /// Each frame the Update function will run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
         protected override void Update(GameTime gameTime)
         {
             if (_nextState != null)
@@ -138,9 +123,9 @@ namespace FloatEngine
             Input.Update();
             UpdateObjects();
             map.Update(objects);
-            UpdateCamera();
-            _snowEmitter.Update(gameTime);
-            //Camera.Zoom, Camera.Rotation
+            UpdateCamera(); //Camera.Zoom, Camera.Rotation
+            snow.Update(gameTime, graphics.GraphicsDevice);
+            rain.Update(gameTime, graphics.GraphicsDevice);
 
 #if DEBUG   //pre-processor directives.
             editor.Update(objects, map);
@@ -159,7 +144,6 @@ namespace FloatEngine
             Resolution.BeginDraw();
 
             _currentState.Draw(gameTime, spriteBatch);
-            //BackBG.Draw(spriteBatch);
 
             //Draw sprites.
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, Camera.GetTransformMatrix()); //layer depth sorting, ex: layer = 0 drawn up front
@@ -172,7 +156,9 @@ namespace FloatEngine
                 map.DrawWalls(spriteBatch);
 
                 if (ParticleLoaded == 1)
-                    _snowEmitter.Draw(gameTime, spriteBatch);
+                    snow.Draw(spriteBatch);
+                if (ParticleLoaded == 2)
+                    rain.Draw(spriteBatch);
             }
 
             spriteBatch.End();
@@ -182,25 +168,7 @@ namespace FloatEngine
             else
                 splash.Draw(spriteBatch);
 
-            //Not using sprite batch for models
-            if (_contentLoaded == true)
-            {
-                bonetransformations = new Matrix[model.Bones.Count];
-                model.CopyAbsoluteBoneTransformsTo(bonetransformations);
-
-                foreach (ModelMesh mesh in model.Meshes)
-                {
-                    foreach (BasicEffect effect in mesh.Effects)
-                    {
-                        effect.World = bonetransformations[mesh.ParentBone.Index];
-                        effect.View = view;
-                        effect.Projection = projection;
-                        effect.EnableDefaultLighting();
-                    }
-                    mesh.Draw();
-                }
-            }
-
+        
             //Calling the draw function via FNA
             base.Draw(gameTime);
         }

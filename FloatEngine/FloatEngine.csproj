@@ -60,6 +60,12 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Content\Art\rain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Art\snow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Notes\Switching Render.txt" />
     <Content Include="Pipeline\Packages\CppNet.dll" />
     <Content Include="Pipeline\Packages\libmojoshader_64.dll" />
@@ -180,8 +186,6 @@
     <Compile Include="Editor\Editor.designer.cs">
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Scripts\Emitters\Emitter.cs" />
-    <Compile Include="Scripts\Emitters\SnowEmitter.cs" />
     <Compile Include="Game\ExampleModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -193,7 +197,12 @@
     <Compile Include="Scripts\GameState.cs" />
     <Compile Include="Scripts\MenuState.cs" />
     <Compile Include="Game\PowerUp.cs" />
-    <Compile Include="Game\Snow.cs" />
+    <Compile Include="Scripts\Particles\Rain\Rain.cs" />
+    <Compile Include="Scripts\Particles\Rain\RainObject.cs" />
+    <Compile Include="Scripts\Particles\Snow\SnowObject.cs" />
+    <Compile Include="Scripts\Particles\Rain\RainParticleGenerator.cs" />
+    <Compile Include="Scripts\Particles\Snow\SnowParticleGenerator.cs" />
+    <Compile Include="Scripts\Particles\Snow\Snow.cs" />
     <Compile Include="Scripts\Splash.cs" />
     <Compile Include="Scripts\Sprite.cs" />
     <Compile Include="Scripts\State.cs" />

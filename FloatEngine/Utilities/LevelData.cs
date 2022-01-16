@@ -17,7 +17,9 @@ namespace FloatEngine
         [XmlElement("Player", Type = typeof(Player))]
         [XmlElement("Enemy", Type = typeof(Enemy))]
         [XmlElement("PowerUp", Type = typeof(PowerUp))]
-        [XmlElement("Snow", Type = typeof(Snow))]
+        [XmlElement("SnowObject", Type = typeof(SnowObject))]
+        [XmlElement("RainObject", Type = typeof(RainObject))]
+        [XmlElement("ExampleModel", Type = typeof(ExampleModel))]
 
         public List<GameObject> objects { get; set; }
         public List<Wall> walls { get; set; }
