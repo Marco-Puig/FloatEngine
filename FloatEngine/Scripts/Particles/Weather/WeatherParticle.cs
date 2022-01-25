@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace FloatEngine
 {
-    class Rain
+    class WeatherParticle
     {
         Texture2D texture;
         Vector2 position;
@@ -23,7 +23,7 @@ namespace FloatEngine
             get { return position; }
         }
 
-        public Rain(Texture2D newTexture, Vector2 newPosition, Vector2 newVelocity)
+        public WeatherParticle(Texture2D newTexture, Vector2 newPosition, Vector2 newVelocity)
         {
             texture = newTexture;
             position = newPosition;

@@ -85,15 +85,6 @@ namespace FloatEngine
                 spriteBatch.Draw(image, position, null, drawColor, rotation, Vector2.Zero, scale, SpriteEffects.None, layerDepth);
         }
 
-        public virtual void Draw3D(GameTime gameTime, SpriteBatch spriteBatch)
-        {
-            if (boundingBoxImage != null && drawBoundingBoxes == true && active == true)
-                spriteBatch.Draw(boundingBoxImage, position, BoundingBox, drawBoxColor, rotation, Vector2.Zero, 1f, SpriteEffects.None, .1f);
-
-            if (image != null && active == true)
-                spriteBatch.Draw(image, position, null, drawColor, rotation, Vector2.Zero, scale, SpriteEffects.None, layerDepth);
-        }
-
         public virtual void ProjectileResponse()
         {
 

@@ -30,7 +30,7 @@ namespace FloatEngine
 			view = Matrix.CreateLookAt(new Vector3(80, 0, 0), Vector3.Zero, Vector3.Up);
 			projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.Viewport.AspectRatio, .1f, 1000f);
 		}	
-        public override void Draw3D(GameTime gameTime, SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
 			{
 				bonetransformations = new Matrix[model.Bones.Count];

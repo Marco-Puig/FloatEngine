@@ -197,12 +197,10 @@
     <Compile Include="Scripts\GameState.cs" />
     <Compile Include="Scripts\MenuState.cs" />
     <Compile Include="Game\PowerUp.cs" />
-    <Compile Include="Scripts\Particles\Rain\Rain.cs" />
-    <Compile Include="Scripts\Particles\Rain\RainObject.cs" />
-    <Compile Include="Scripts\Particles\Snow\SnowObject.cs" />
-    <Compile Include="Scripts\Particles\Rain\RainParticleGenerator.cs" />
-    <Compile Include="Scripts\Particles\Snow\SnowParticleGenerator.cs" />
-    <Compile Include="Scripts\Particles\Snow\Snow.cs" />
+    <Compile Include="Scripts\Particles\Weather\RainObject.cs" />
+    <Compile Include="Scripts\Particles\Weather\SnowObject.cs" />
+    <Compile Include="Scripts\Particles\Weather\WeatherParticleGenerator.cs" />
+    <Compile Include="Scripts\Particles\Weather\WeatherParticle.cs" />
     <Compile Include="Scripts\Splash.cs" />
     <Compile Include="Scripts\Sprite.cs" />
     <Compile Include="Scripts\State.cs" />

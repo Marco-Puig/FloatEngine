@@ -36,8 +36,7 @@ namespace FloatEngine
 
         //Particle Manager
         public static int ParticleLoaded = 0;
-        SnowParticleGenerator snow;
-        RainParticleGenerator rain;
+        WeatherParticleGenerator snow, rain;
 
         public void ChangeState(State state)
         {
@@ -88,11 +87,11 @@ namespace FloatEngine
 
             if (ParticleLoaded == 1)
                 spriteBatch = new SpriteBatch(GraphicsDevice);
-                snow = new SnowParticleGenerator(Content.Load<Texture2D>("Art//snow"), graphics.GraphicsDevice.Viewport.Width, 100);
+                snow = new WeatherParticleGenerator(Content.Load<Texture2D>("Art//snow"), graphics.GraphicsDevice.Viewport.Width, 100);
 
             if (ParticleLoaded == 2)
                 spriteBatch = new SpriteBatch(GraphicsDevice);
-                rain = new RainParticleGenerator(Content.Load<Texture2D>("Art//rain"), graphics.GraphicsDevice.Viewport.Width, 100);
+                rain = new WeatherParticleGenerator(Content.Load<Texture2D>("Art//rain"), graphics.GraphicsDevice.Viewport.Width, 100);
 
 #if DEBUG //pre-processor directives.
             editor.LoadTextures(Content);
@@ -167,9 +166,8 @@ namespace FloatEngine
                 gameHUD.Draw(spriteBatch);
             else
                 splash.Draw(spriteBatch);
-
-        
-            //Calling the draw function via FNA
+                
+           //Calling the draw function via FNA
             base.Draw(gameTime);
         }
 

@@ -13,20 +13,19 @@ using Microsoft.Xna.Framework.Media;
 
 namespace FloatEngine
 {
-    class SnowParticleGenerator
+    class WeatherParticleGenerator
     {
         Texture2D texture;
-
         float spawnWidth;
         float density;
 
-        List<Snow> snow = new List<Snow>();
+        List<WeatherParticle> weatherParticle = new List<WeatherParticle>();
 
         float timer;
 
         Random rand1, rand2;
 
-        public SnowParticleGenerator(Texture2D newTexture, float newSpawnWidth, float newDensity)
+        public WeatherParticleGenerator(Texture2D newTexture, float newSpawnWidth, float newDensity)
         {
             texture = newTexture;
             spawnWidth = newSpawnWidth;
@@ -45,25 +44,25 @@ namespace FloatEngine
                 createParticle();
             }
 
-            for (int i = 0; i < snow.Count; i++)
+            for (int i = 0; i < weatherParticle.Count; i++)
             {
-                snow[i].Update();
+                weatherParticle[i].Update();
 
-                if(snow[i].Position.Y > graphics.Viewport.Height)
+                if(weatherParticle[i].Position.Y > graphics.Viewport.Height)
                 {
-                    snow.RemoveAt(i);
+                    weatherParticle.RemoveAt(i);
                     i--;
                 }
             }
         }           
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Snow snow in snow)
+            foreach (WeatherParticle snow in weatherParticle)
                 snow.Draw(spriteBatch);
         }
         public void createParticle()
         {
-            snow.Add(new Snow(texture, new Vector2(
+            weatherParticle.Add(new WeatherParticle(texture, new Vector2(
                 -50 + (float)rand1.NextDouble() * spawnWidth, 0), 
                 new Vector2 (1, rand2.Next(5, 8))));
         }
