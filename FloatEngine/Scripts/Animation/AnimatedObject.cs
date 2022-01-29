@@ -124,13 +124,13 @@ namespace FloatEngine
         {
             return currentAnimationFrame >= currentAnimation.animationOrder.Count - 1;
         }
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Matrix projection, SpriteBatch spriteBatch)
         {
             if (active == false)
                 return;
 
             if (currentAnimationX == -1 || currentAnimationY == -1)
-                base.Draw(spriteBatch);
+                base.Draw(projection, spriteBatch);
             else
                 spriteBatch.Draw(image, position, new Rectangle(currentAnimationX, currentAnimationY, animationSet.width, animationSet.height), drawColor, rotation, Vector2.Zero, scale, spriteEffect, layerDepth);
         }

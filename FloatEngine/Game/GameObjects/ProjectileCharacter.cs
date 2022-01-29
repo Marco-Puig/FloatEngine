@@ -58,12 +58,12 @@ namespace FloatEngine
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Matrix projection, SpriteBatch spriteBatch)
         {
             for (int i = 0; i < numOfProjs; i++)
-                projectiles[i].Draw(spriteBatch);
+                projectiles[i].Draw(projection, spriteBatch);
 
-            base.Draw(spriteBatch);
+            base.Draw(projection, spriteBatch);
         }
     }
 }

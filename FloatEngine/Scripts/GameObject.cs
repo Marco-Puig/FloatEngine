@@ -76,7 +76,7 @@ namespace FloatEngine
             return BoundingBox.Intersects(input);
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(Matrix projection, SpriteBatch spriteBatch)
         {
             if(boundingBoxImage != null && drawBoundingBoxes == true && active == true)
                 spriteBatch.Draw(boundingBoxImage, position, BoundingBox, drawBoxColor, rotation, Vector2.Zero, 1f, SpriteEffects.None, .1f);

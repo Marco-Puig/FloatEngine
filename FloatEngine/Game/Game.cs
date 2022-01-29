@@ -13,8 +13,9 @@ namespace FloatEngine
     public class Game : Microsoft.Xna.Framework.Game
     {
         //Rendering managers
-        public GraphicsDeviceManager graphics; //access to graphics/display device
+        GraphicsDeviceManager graphics; //access to graphics/display device
         SpriteBatch spriteBatch; //renders graphics using sprite batch
+        Matrix projection; //draw 3D space
 
         //Screen
         public static int ScreenHeight = 720;
@@ -47,7 +48,6 @@ namespace FloatEngine
             //Set graphics
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-         
 
             //Set resolution
             Resolution.Init(ref graphics);
@@ -83,6 +83,7 @@ namespace FloatEngine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             _currentState = new MenuState(this, graphics.GraphicsDevice, Content);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.GraphicsDevice.Viewport.AspectRatio, .1f, 1000f);
             _contentLoaded = false;
 
             if (ParticleLoaded == 1)
@@ -208,11 +209,11 @@ namespace FloatEngine
         {
             for (int i = 0; i < objects.Count; i++)
             {
-                objects[i].Draw(spriteBatch);
+                objects[i].Draw(projection, spriteBatch);
             }
             for (int i = 0; i < map.decor.Count; i++)
             {
-                map.decor[i].Draw(spriteBatch);
+                map.decor[i].Draw(projection, spriteBatch);
             }
         }
         private void UpdateCamera()

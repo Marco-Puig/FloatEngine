@@ -186,7 +186,7 @@
     <Compile Include="Editor\Editor.designer.cs">
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game\ExampleModel.cs" />
+    <Compile Include="Game\GameObjects\ExampleModel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,7 +196,7 @@
     <Compile Include="Scripts\Component.cs" />
     <Compile Include="Scripts\GameState.cs" />
     <Compile Include="Scripts\MenuState.cs" />
-    <Compile Include="Game\PowerUp.cs" />
+    <Compile Include="Game\GameObjects\PowerUp.cs" />
     <Compile Include="Scripts\Particles\Weather\RainObject.cs" />
     <Compile Include="Scripts\Particles\Weather\SnowObject.cs" />
     <Compile Include="Scripts\Particles\Weather\WeatherParticleGenerator.cs" />
@@ -206,15 +206,15 @@
     <Compile Include="Scripts\State.cs" />
     <Compile Include="Utilities\LevelData.cs" />
     <Compile Include="Scripts\Character.cs" />
-    <Compile Include="Game\Enemy.cs" />
+    <Compile Include="Game\GameObjects\Enemy.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\GameHUD.cs" />
     <Compile Include="Scripts\GameObject.cs" />
     <Compile Include="Scripts\Map.cs" />
-    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\GameObjects\Player.cs" />
     <Compile Include="Scripts\Program.cs" />
-    <Compile Include="Game\Projectile.cs" />
-    <Compile Include="Game\ProjectileCharacter.cs" />
+    <Compile Include="Game\GameObjects\Projectile.cs" />
+    <Compile Include="Game\GameObjects\ProjectileCharacter.cs" />
     <Compile Include="Utilities\Camera.cs" />
     <Compile Include="Utilities\Global.cs" />
     <Compile Include="Utilities\Input.cs" />

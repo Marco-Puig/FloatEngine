@@ -124,7 +124,7 @@ namespace FloatEngine
             boundingBoxHeight = sourceRect.Height = image.Height;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Matrix projection, SpriteBatch spriteBatch)
         {
             if (image != null && active == true)       
                 spriteBatch.Draw(image, position, sourceRect, drawColor, rotation, Vector2.Zero, scale, SpriteEffects.None, layerDepth);          

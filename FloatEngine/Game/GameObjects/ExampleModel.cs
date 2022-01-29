@@ -12,11 +12,15 @@ namespace FloatEngine
 {
 	public class ExampleModel : GameObject
 	{
-		Matrix view, projection; //render graphics via FNA3D graphics api
+		Matrix view; //render graphics via FNA3D graphics api
 		Matrix[] bonetransformations; //transform
 		Model model;
 
-
+		public ExampleModel()
+		{
+			view = Matrix.CreateLookAt(new Vector3(80, 0, 0), Vector3.Zero, Vector3.Up);
+		}
+		
 		public override void Initialize()
 		{ 
 			base.Initialize();
@@ -25,12 +29,11 @@ namespace FloatEngine
 		{
 			model = content.Load<Model>("Models//3080-model");
 		}
-		public void Update(GraphicsDevice graphics)
+		public void Update()
 		{
-			view = Matrix.CreateLookAt(new Vector3(80, 0, 0), Vector3.Zero, Vector3.Up);
-			projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.Viewport.AspectRatio, .1f, 1000f);
+			//animations
 		}	
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(Matrix projection, SpriteBatch spriteBatch)
         {
 			{
 				bonetransformations = new Matrix[model.Bones.Count];

@@ -1079,7 +1079,7 @@ namespace FloatEngine
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("\nFloatEngine (Version 0.4a) \nCreated by Marco Puig \n(2021 - 2022)");
+            System.Windows.Forms.MessageBox.Show("\nFloatEngine (Version 0.4a) \nCreated by Marco Puig \n(2021 - 2022)\a");
         }
 
         public void OpenLevel()
