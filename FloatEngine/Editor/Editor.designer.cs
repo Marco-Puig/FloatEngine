@@ -82,6 +82,7 @@
             this.sourceRectangleLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xPosition)).BeginInit();
@@ -107,7 +108,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(383, 24);
+            this.menuStrip.Size = new System.Drawing.Size(366, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             this.menuStrip.MouseEnter += new System.EventHandler(this.menuStrip_MouseEnter);
@@ -198,11 +199,11 @@
             this.groupBox1.Controls.Add(this.decorRadioButton);
             this.groupBox1.Controls.Add(this.objectsRadioButton);
             this.groupBox1.Controls.Add(this.wallsRadioButton);
-            this.groupBox1.Location = new System.Drawing.Point(6, 27);
+            this.groupBox1.Location = new System.Drawing.Point(7, 31);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(364, 125);
+            this.groupBox1.Size = new System.Drawing.Size(352, 121);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create";
@@ -259,16 +260,16 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(5, 158);
+            this.listBox.Location = new System.Drawing.Point(7, 157);
             this.listBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(365, 121);
+            this.listBox.Size = new System.Drawing.Size(352, 121);
             this.listBox.TabIndex = 2;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(84, 294);
+            this.addButton.Location = new System.Drawing.Point(71, 284);
             this.addButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(74, 23);
@@ -279,7 +280,7 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(217, 294);
+            this.removeButton.Location = new System.Drawing.Point(228, 284);
             this.removeButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(74, 23);
@@ -417,10 +418,10 @@
             // objectTypes
             // 
             this.objectTypes.FormattingEnabled = true;
-            this.objectTypes.Location = new System.Drawing.Point(2, 359);
+            this.objectTypes.Location = new System.Drawing.Point(3, 359);
             this.objectTypes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.objectTypes.Name = "objectTypes";
-            this.objectTypes.Size = new System.Drawing.Size(368, 56);
+            this.objectTypes.Size = new System.Drawing.Size(363, 56);
             this.objectTypes.TabIndex = 15;
             this.objectTypes.Visible = false;
             // 
@@ -551,7 +552,7 @@
             this.mapSizeGroup.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mapSizeGroup.Name = "mapSizeGroup";
             this.mapSizeGroup.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.mapSizeGroup.Size = new System.Drawing.Size(127, 101);
+            this.mapSizeGroup.Size = new System.Drawing.Size(102, 101);
             this.mapSizeGroup.TabIndex = 20;
             this.mapSizeGroup.TabStop = false;
             this.mapSizeGroup.Text = "Map Size";
@@ -752,8 +753,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(274, 510);
+            this.groupBox2.Location = new System.Drawing.Point(257, 510);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(97, 101);
             this.groupBox2.TabIndex = 32;
@@ -773,12 +775,25 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(3, 41);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(99, 17);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "View Colliders";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // EditorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(383, 623);
+            this.ClientSize = new System.Drawing.Size(366, 623);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.sourceRectangleLabel);
             this.Controls.Add(this.decorSourceHeightLabel);
@@ -911,5 +926,6 @@
         private System.Windows.Forms.ToolStripMenuItem lightModeToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

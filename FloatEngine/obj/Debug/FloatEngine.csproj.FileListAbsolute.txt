@@ -63,3 +63,6 @@ D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Models\trees_pine.xnb
 D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Art\palette.png
 D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Art\snow.png
 D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Art\rain.png
+D:\repos\FloatEngine\FloatEngine\bin\Debug\MaterialSkin.dll
+D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Art\sprite2.png
+D:\repos\FloatEngine\FloatEngine\bin\Debug\Content\Animations\GirlPlayer.anm

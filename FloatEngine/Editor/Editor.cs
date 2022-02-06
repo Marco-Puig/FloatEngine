@@ -22,6 +22,7 @@ namespace FloatEngine
     public partial class EditorWindow : Form
     {
         public Game game;
+        public GameObject gObject;
         IntPtr gameWinHandle; //HWND for the game window.
 
         public enum CreateMode { None, Walls, Objects, Decor, Models };
@@ -1079,7 +1080,17 @@ namespace FloatEngine
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("\nFloatEngine (Version 0.4a) \nCreated by Marco Puig \n(2021 - 2022)\a");
+            System.Windows.Forms.MessageBox.Show("\nFloatEngine (Version 0.8a)\n Created by Marco Puig\n (2021 - 2022)");
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        { 
+            if (gObject == null)
+                return;
+            else if (checkBox1.Checked)
+                gObject.drawBoundingBoxes = true;
+            else
+                gObject.drawBoundingBoxes = false;         
         }
 
         public void OpenLevel()

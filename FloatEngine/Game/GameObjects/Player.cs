@@ -34,15 +34,18 @@ namespace FloatEngine
         }
         public override void Load(ContentManager content)
         {
-            image = TextureLoader.Load("Art//spritesheet", content);
+            image = TextureLoader.Load("Art//sprite2", content);
 
             //Load our animation stuff:
-            LoadAnimation("ShyBoy.anm", content);
+            LoadAnimation("GirlPlayer.anm", content);
             ChangeAnimation(Animations.IdleLeft);
 
             base.Load(content);
 
-            boundingBoxOffset.X = 0; boundingBoxOffset.Y = 0; boundingBoxWidth = animationSet.width; boundingBoxHeight = animationSet.height - 10;
+            boundingBoxOffset.X = 0; 
+            boundingBoxOffset.Y = 0;
+            boundingBoxWidth = animationSet.width; 
+            boundingBoxHeight = animationSet.height - 18; //adjust for character height
 
             //Load Song:
             song = content.Load<SoundEffect>("Audio//song");

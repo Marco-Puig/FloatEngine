@@ -1,0 +1,11 @@
+﻿Find your GameObject that you want to adjust...
+Needs to be deriving from the GameObject class;
+
+Go into the Load() function
+Then paste: boundingBoxHeight = image.Height; 
+
+You can then adjust the height by subtracted or adding to decrease or increase the height.
+You can do the same thing for the width as well.
+
+Example:
+boundingBoxHeight = image.Height - 10; 

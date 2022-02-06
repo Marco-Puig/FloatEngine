@@ -25,7 +25,7 @@ namespace FloatEngine
         protected Vector2 boundingBoxOffset;
         Texture2D boundingBoxImage;
         public Color drawBoxColor = new Color(120, 120, 120, 120);
-        const bool drawBoundingBoxes = true; //const means can true statement can never be changed
+        public bool drawBoundingBoxes = true; //const means can true statement can never be changed
         protected Vector2 direction = new Vector2(1, 0);
 
         public Vector2 startPosition = new Vector2(-1, -1);
@@ -63,7 +63,7 @@ namespace FloatEngine
             if(image != null)
             {
                 boundingBoxWidth = image.Width;
-                boundingBoxHeight = image.Height - 10;
+                boundingBoxHeight = image.Height; 
             }
         }
         public virtual void Update(List<GameObject> objects, Map map)

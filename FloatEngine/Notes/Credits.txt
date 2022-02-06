@@ -5,11 +5,10 @@ Programming Help:
 Ethan Lee
 Michael Hicks
 Daniel Schroeder (deadlydog)
+
+Math Code:
 Oyyou
 
-3D/Math Code:
-Charles Humphrey
-
 Content Pipelines:
-FNA3D (Desktop)
-MONOGame (Mobile, Consoles)
+FNA3D (Sprites)
+MGCB (3D Models)

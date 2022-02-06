@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AnimationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <animation>
+    <animationList>
+      <Animation>
+        <animationOrder>
+          <int>0</int>
+          <int>1</int>
+          <int>2</int>
+          <int>3</int>
+          <int>4</int>
+        </animationOrder>
+        <name>Idle Left</name>
+        <speed>10</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>4</int>
+          <int>3</int>
+          <int>2</int>
+          <int>1</int>
+          <int>0</int>
+        </animationOrder>
+        <name>Idle Right</name>
+        <speed>10</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>16</int>
+          <int>17</int>
+          <int>18</int>
+          <int>19</int>
+          <int>20</int>
+          <int>21</int>
+          <int>22</int>
+          <int>23</int>
+        </animationOrder>
+        <name>Run Left</name>
+        <speed>10</speed>
+      </Animation>
+      <Animation>
+        <animationOrder>
+          <int>23</int>
+          <int>22</int>
+          <int>21</int>
+          <int>20</int>
+          <int>19</int>
+          <int>18</int>
+          <int>17</int>
+          <int>16</int>
+        </animationOrder>
+        <name>Run Right</name>
+        <speed>10</speed>
+      </Animation>
+    </animationList>
+    <width>96</width>
+    <height>96</height>
+    <gridX>8</gridX>
+    <gridY>8</gridY>
+  </animation>
+  <texturePath>Textures\sprite2.png</texturePath>
+</AnimationData>

@@ -43,6 +43,7 @@ namespace FloatEngine
             image = TextureLoader.Load("Art//enemy", content);
             explosion = content.Load<SoundEffect>("Audio//explosion");
             base.Load(content);
+            boundingBoxHeight = image.Height - 10;
         }
 
         public override void Update(List<GameObject> objects, Map map)
