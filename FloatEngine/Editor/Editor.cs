@@ -28,6 +28,7 @@ namespace FloatEngine
         public enum CreateMode { None, Walls, Objects, Decor, Models };
         public CreateMode mode = CreateMode.None; //What are we creating right now?
         public bool placingItem = false; //Are we currently dragging and dropping something onto the map?
+        public bool uncleanUI = false;
 
         Texture2D grid, pixel;
         Vector2 cameraPosition; //Used to move the camera around while paused.
@@ -556,10 +557,6 @@ namespace FloatEngine
             //Set the display member (what specific information gets shown in the listbox) depending for whatever mode we're in:
             if (mode == CreateMode.Walls)
                 listBox.DisplayMember = "EditorWall";
-            else if (mode == CreateMode.Objects)
-            {
-                //I'm cool with what it shows now, but if you want you can change it!
-            }
             else if (mode == CreateMode.Decor)
                 listBox.DisplayMember = "Name";
         }
@@ -621,6 +618,7 @@ namespace FloatEngine
 
         private void objectsRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+
             if (objectsRadioButton.Checked == true)
             {
                 mode = CreateMode.Objects;
@@ -631,11 +629,12 @@ namespace FloatEngine
                 height.Enabled = width.Enabled = false;
             }
             else
-                objectTypes.Visible = false;
+                objectTypes.Visible = uncleanUI;
         }
 
         private void decorRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+
             if (decorRadioButton.Checked == true)
             {
                 mode = CreateMode.Decor;
@@ -650,7 +649,7 @@ namespace FloatEngine
             else
                 imagePath.Visible = imagePathLabel.Visible = loadImageButton.Visible = layerDepthLabel.Visible = layerDepth.Visible = decorSourceXLabel.Visible = decorSourceX.Visible =
                     decorSourceYLabel.Visible = decorSourceY.Visible = decorSourceWidthLabel.Visible = decorSourceWidth.Visible = decorSourceHeightLabel.Visible = decorSourceHeight.Visible =
-                    sourceRectangleLabel.Visible = false;
+                    sourceRectangleLabel.Visible = uncleanUI;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -1091,6 +1090,44 @@ namespace FloatEngine
                 gObject.drawBoundingBoxes = true;
             else
                 gObject.drawBoundingBoxes = false;         
+        }
+
+        private void xLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void decorSourceXLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void decorSourceHeightLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void layerDepthLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imagePath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+                uncleanUI = false;
+            else
+                uncleanUI = true;
         }
 
         public void OpenLevel()
