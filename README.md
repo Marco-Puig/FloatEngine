@@ -1,5 +1,5 @@
 # FloatEngine
-A Cross Platform Game Engine Written Entirely in C#
+A Cross Platform Game Engine Written Entirely in C# using XNA
 
 Supports: Vulkan, OpenGL, Metal, and DirectX11
 
