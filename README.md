@@ -3,7 +3,7 @@ A Cross Platform Game Engine Written Entirely in C# using XNA
 
 Supports: Vulkan, OpenGL, Metal, and DirectX11
 
-Capable of 2D and Light 3D Rendering.
+Capable of 2D and Basic 3D Rendering.
 
 Recommended for 2D/2.5D Games
 
